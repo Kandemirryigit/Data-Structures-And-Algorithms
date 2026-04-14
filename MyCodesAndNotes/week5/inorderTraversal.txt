@@ -1,0 +1,34 @@
+What is inorder traversal?
+ - In a binary tree:
+     1- Visit left subtree
+     2- Visit current node
+     3- Visit right subtree
+
+
+Why we use inorder traversal in a BST?
+ - The magic:
+   - In a BST, inorder traversal always gives the elements in sorted order.
+
+ - Example:
+     10
+     /  \
+    5    15
+   / \   / \
+  2   7 12 20
+
+  - Inorder traversal: 2 → 5 → 7 → 10 → 12 → 15 → 20 ✅ (sorted!)
+
+
+
+
+Advantages of inorder traversal
+ 
+  1- Sorted output
+    - Useful for printing data in ascending order
+ 
+  2- Easy way to check BST property
+    - If inorder traversal of a tree is sorted → tree satisfies BST rules
+
+  3- Useful for algorithms
+    - Finding k-th smallest element
+    - Range queries (all elements between X and Y)

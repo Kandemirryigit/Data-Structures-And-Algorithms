@@ -1,0 +1,30 @@
+What is preorder traversal?
+ - In a binary tree, preorder traversal follows this order:
+ - Root → Left → Right
+
+
+Steps
+ 1- Visit the current node (Root) → do something with it (like print)
+ 2- Traverse the left subtree (recursively)
+ 3- Traverse the right subtree (recursively)
+
+
+
+ Example:
+      10
+     /  \
+    5    15
+   / \   / \
+  2   7 12 20
+
+
+ - output: 10 → 5 → 2 → 7 → 15 → 12 → 20
+ - Notice: Root first, then left, then right
+
+
+
+
+When is preorder useful?
+ - Copying a tree → you visit root first, then create subtrees
+ - Expression trees → gives prefix notation
+ - Save/serialize a tree → preorder allows reconstruction

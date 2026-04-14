@@ -1,0 +1,29 @@
+What is a Stack?
+ - Imagine a pile of plates in a cafeteria
+ - You can only add a new plate on the top
+ - You can only take a plate from the top
+ - You can never take a plate from the middle or bottom.
+ - That's exactly how a stack works.
+ - Last In, First Out — LIFO
+ - The last thing you put in is the first thing that comes out.
+
+
+
+
+Real World Examples of Stacks
+ - Undo button in any app
+    - every action you do gets pushed onto a stack
+    - When you press undo, the last action gets popped off.
+
+ - Browser back button
+    - every page you visit gets pushed. 
+    - When you press back, the last page gets popped.
+
+ 
+
+
+The Three Operations
+ - Push — add an element to the top. O(1)
+ - Pop — remove the element from the top. O(1)
+ - Peek — look at the top element without removing it. O(1)
+ - All three are always O(1). That's the beauty of a stack.

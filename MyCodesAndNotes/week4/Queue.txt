@@ -1,0 +1,19 @@
+What is a Queue?
+ - Imagine you are at a McDonald's line.
+ - The first person who joins the line gets served first
+ - New people join from the back of the line
+ - People leave from the front of the line
+ - Nobody can cut in the middle
+ - That is exactly a queue.
+
+
+
+
+The Golden Rule — FIFO
+ - First In First Out
+    - The first element you put in is the first element you get out
+    - Completely opposite of a stack.
+
+    - Stack  →  LIFO  →  last in first out  →  pile of plates
+    - Queue  →  FIFO  →  first in first out →  line at McDonald's
+

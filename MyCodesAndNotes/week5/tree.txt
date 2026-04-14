@@ -1,0 +1,78 @@
+What is a Tree?
+ - Forget code for now
+ - Let's start with real life.
+ - Think of a family tree
+ - You have a grandfather at the top
+ - He has children below him
+ - Each child has their own children
+ - And so on
+ - Nobody connects to two different parents
+ - There are no loops.
+ - That's exactly what a tree data structure is.
+
+
+
+
+
+Real Life Examples of Trees
+
+ - File system on your computer 
+   - your C: drive is the root.
+   - Inside it are folders
+   - Inside each folder are more folders and files.
+   - That's a tree.
+
+ - A company org chart 
+   - CEO at the top, managers below, employees below them.
+
+ - HTML webpage structure 
+   - <html> is the root, inside it <head> and <body>, inside body are more tags.
+
+
+
+
+
+Key Terms You Must Know
+ - Root — the top node. Has no parent. Every tree has exactly one root.
+ - Parent — a node that has children below it.
+ - Child — a node that has a parent above it.
+ - Sibling — nodes that share the same parent.
+ - Leaf — a node with no children. It's at the bottom of the tree.
+ - Height — the longest path from root down to a leaf.
+ - Depth — the distance from the root to a specific node
+ - Edge — the line connecting two nodes.
+ - Subtree — any node and all its descendants form a subtree.
+
+
+
+
+
+What is a Binary Tree?
+ - A binary tree is a tree where every node has at most 2 children
+ - called left child and right child.
+ - That's the only rule. At most 2 children per node.
+   struct Node {
+    int data;
+    struct Node* left;   // left child
+    struct Node* right;  // right child
+};
+
+
+
+
+What is a Binary Search Tree (BST)?
+ - A BST is a binary tree with one special rule:
+ - For every node:
+   - Everything in the left subtree is smaller than the node
+   - Everything in the right subtree is larger than the node
+
+
+
+
+
+
+Summary 
+ - A tree is a hierarchical structure with a root at the top
+ - Key terms: root, parent, child, sibling, leaf, height, depth
+ - Binary tree = at most 2 children per node (left and right)
+ - BST = left subtree smaller, right subtree larger

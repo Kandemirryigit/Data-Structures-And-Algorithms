@@ -1,0 +1,55 @@
+What a Binary Search Tree (BST) is
+ - A BST is a binary tree with this property:
+ - For each node: left subtree < node < right subtree
+ - This ordering rule is what makes BST special.
+
+
+Advantages of a BST
+
+ 1-Fast Search (compared to a normal linked list)
+    - Average case: O(log n)
+    - Worst case: O(n) if tree is unbalanced
+    - Why? Because every comparison eliminates half of the tree (like binary search)
+
+
+ 2-Efficient Insert/Delete
+    - Insert and delete operations also take O(log n) on average
+    - Because we only traverse down one path, not the whole tree
+
+ 3- Ordered Data
+    - If you do an inorder traversal, you get the elements sorted automatically
+    - Useful for printing or processing data in order
+
+ 4- Dynamic Size
+    - Unlike arrays, BSTs don’t need a predefined size
+    - You can add/remove elements on the fly
+
+ 5- Flexible Structure
+    - Can be used to implement:
+       - Sets
+       - Maps (key-value)
+       - Priority queues (with modifications)
+       - Many data structures rely on BST logic
+
+ 6- Better than Linked List for Large Data
+    - Linked list search = O(n)
+    - BST search = O(log n) average
+    - So for lots of elements, BST is much faster
+
+
+
+
+
+Key limitation to remember
+ - If the tree becomes unbalanced, performance drops to O(n)
+ - That’s why sometimes people use AVL trees or Red-Black trees to keep it balanced
+
+
+
+
+
+Quick analogy
+ - Think of BST like a sorted phonebook:
+ - You don’t check every page
+ - You look at the middle, then left/right depending on the number/name
+ - Very efficient compared to just flipping pages one by one

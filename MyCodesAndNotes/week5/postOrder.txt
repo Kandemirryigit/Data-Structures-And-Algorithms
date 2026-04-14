@@ -1,0 +1,34 @@
+What is postorder traversal?
+ - In a binary tree, postorder traversal follows this order:
+ - Left → Right → Root
+
+
+Steps
+ 1- Traverse the left subtree (recursively)
+ 2- Traverse the right subtree (recursively)
+ 3- Visit the current node (Root) → do something with it (like print)
+
+
+
+Example: 
+
+      50
+     /  \
+    30   70
+   / \
+  20  40
+
+  - Output: 20 → 40 → 30 → 70 → 50
+  - Notice: Root comes last, after all children
+
+
+
+When is postorder useful?
+ - Deleting a tree
+   - You need to delete children before deleting root
+ 
+ - Expression trees
+   - Produces postfix notation (useful in calculators/compilers)
+ 
+ - Bottom-up calculations
+   - Any problem where you need results from children first
