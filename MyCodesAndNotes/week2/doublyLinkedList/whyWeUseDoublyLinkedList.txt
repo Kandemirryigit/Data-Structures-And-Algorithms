@@ -1,0 +1,30 @@
+Advantages of Doubly Linked List
+
+ 1- Two-way traversal
+    - You can go forward or backward easily
+    - Useful for things like browser history, undo-redo stacks, music playlists
+
+ 2- Easier deletion
+    - In SLL, to delete a node, you must know the previous node
+    - In DLL, each node knows its previous, so deletion is faster
+
+ 3- Insertion at both ends
+    - You can insert before a node without starting from head
+    - SLL can only efficiently insert after a node
+
+ 4- More flexible
+    - Useful for complex data structures like deque, LRU cache
+
+
+
+
+Limitations of DLL  
+
+ 1- More memory per node
+    - Each node stores an extra pointer (prev)
+
+ 2- More complex code
+    - Must update both next and prev pointers
+
+ 3- Slightly slower operations
+    - Extra pointer handling can make insertion/deletion a tiny bit slower

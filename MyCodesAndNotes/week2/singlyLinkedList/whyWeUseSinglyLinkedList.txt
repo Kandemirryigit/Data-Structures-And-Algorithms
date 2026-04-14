@@ -1,0 +1,47 @@
+Why we use Singly Linked Lists
+ - A singly linked list (SLL) is a data structure made of nodes where:
+ - Each node contains data
+ - Each node contains a pointer to the next node
+ - The last node points to NULL
+
+
+
+
+Advantages over arrays
+ 
+ 1- Dynamic size
+   - You don’t need to know the number of elements in advance
+   - You can add or remove nodes anytime without resizing
+
+ 2- Efficient insertions/deletions
+   - At beginning or middle, you can insert/delete without shifting elements
+   - Arrays require moving all elements after the insertion/deletion
+
+ 3- Memory efficiency
+   - Only allocate memory for nodes that exist
+   - Arrays may waste memory if declared too big
+
+
+
+
+When arrays are worse
+ - Array size is fixed or costly to change
+ - Deleting or inserting middle elements is O(n) in arrays, O(1) in linked list if you have pointer
+
+
+
+Limitations of singly linked lists
+
+ 1- No random access
+   - To access the 5th element, you must start from head and traverse → O(n)
+   - Arrays can access any index in O(1)
+
+ 2- Extra memory for pointer
+   - Each node stores a pointer, so slightly more memory than arrays
+
+
+
+When to use SLL
+ - Frequent insertions and deletions
+ - Unknown or changing number of elements
+ - When You don’t need fast random access

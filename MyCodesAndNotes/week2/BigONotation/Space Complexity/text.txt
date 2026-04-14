@@ -1,0 +1,21 @@
+What is space complexity?
+ - Definition: The total amount of memory your program needs while running, as a function of input size n.
+ - Think of it as: “How big does my program’s memory footprint grow when n grows?”
+
+
+
+Types of memory usage
+
+ - Fixed memory:
+    - doesn’t depend on n
+    - Space complexity = O(1) (constant space)
+
+ - Input-dependent memory
+    - grows with n
+    - Space complexity = O(n)
+
+ - Auxiliary memory
+   - extra memory used by your algorithm
+   - Example: recursion stack, temporary arrays, etc. 
+
+ 

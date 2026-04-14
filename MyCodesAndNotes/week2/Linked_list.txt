@@ -1,0 +1,80 @@
+Linked Lists
+
+What's Wrong With Arrays?
+ - Before we learn linked lists, let's understand why we need them in the first place.
+ - Arrays have two big problems:
+ - Problem 1 — Fixed size. 
+    - When you create an array, you must decide its size upfront
+    - What if you need more space later?
+    - You have to create a whole new bigger array and copy everything over.
+ - Problem 2 — Expensive insert/delete. 
+    - Inserting in the middle means shifting all elements. That's O(n).
+
+- Linked lists solve both of these problems.
+
+
+
+
+What is a Linked List?
+ - A linked list is a chain of nodes. Each node contains two things:
+   - The data (the value you want to store)
+   - A pointer to the next node
+
+ - Think of it like a treasure hunt.
+ - Each clue (node) tells you the value AND where to find the next clue
+ - The last clue points to nothing (NULL).
+
+   struct Node {
+    int data;           // the value
+    struct Node* next;  // pointer to next node
+    };
+
+ - Nodes can be anywhere in memory
+ - They don't need to be next to each other
+ - Each node just remembers where the next one is.
+
+
+
+
+Three Types of Linked Lists
+ - Singly linked list 
+    - each node points to the next only.
+    - You can only go forward.
+
+ - Doubly linked list
+   - each node has two pointers, one to next and one to previous.
+   - You can go both directions
+   - Uses more memory but more flexible.
+
+ - Circular linked list
+   - the last node points back to the head.
+   - No NULL at the end
+   - Useful for things like round-robin scheduling.
+
+
+
+
+
+Operations on a Singly Linked List
+ - Insert at Head — O(1)
+   - This is the easiest and fastest operation. 
+   - Create a new node, point it to the current head, make it the new head.
+
+ - Insert at Tail — O(n)
+   - You must walk all the way to the last node first, then attach the new node there.
+
+ - Delete a Node — O(n)
+   - You must walk to find the node, then redirect the previous node's pointer to skip over it.
+
+
+
+
+
+Summary
+  - A linked list is a chain of nodes where each node has data and a pointer to the next node
+  - Three types: singly (one direction), doubly (both directions), circular (last points to head)
+  - Unlike arrays, nodes are scattered in memory — connected only by pointers
+  - Insert at head is O(1) — the big advantage over arrays
+  - Access by index is O(n) — the big disadvantage vs arrays
+  - Always free deleted nodes to avoid memory leaks
+  - No shifting needed for insert/delete — just redirect pointers

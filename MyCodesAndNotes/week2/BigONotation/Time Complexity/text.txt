@@ -1,0 +1,59 @@
+Big O Notation describes:
+ - How the running time of an algorithm grows as the input size (n) increases.
+ - Think like this:
+ - Small input → everything is fast
+ - Large input → which algorithm slows down more?
+ - Ask yourself:
+ - “How many times does this code run?”
+ - That’s it. Everything comes from this question.
+
+
+
+
+Big O is about the worst-case scenario
+ - Big O always describes the upper bound: the maximum number of steps an algorithm can take for any input of size n.
+ - Why? Because in programming and exams, we want to know: “How slow can this get if things go badly?”
+
+
+
+
+O(1) — Constant time
+ - Runs once
+
+
+O(n) — Linear time
+ - Runs n times
+
+
+O(n²) — Nested loops
+ - Outer loop: n
+ - Inner loop: n
+ - Total: n × n = n²
+ 
+
+O(log n) — Logarithmic
+ - Value grows by multiplying
+ - 1 → 2 → 4 → 8 → ...
+ 
+
+O(n log n)
+ - Combination of linear + logarithmic
+ - outer: n
+ - inner: log n
+ - total: n log n → O(n log n)
+
+
+O(n³) — Cubic
+ - Triple nested loops
+ - n × n × n = n³ → O(n³)
+
+
+
+
+Summary
+
+    No loop	                O(1)
+    1 loop	                O(n)
+    2 nested                loops	O(n²)
+    Multiply inside	        O(log n)
+    n + log loop	        O(n log n)

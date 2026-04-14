@@ -1,0 +1,9 @@
+What is a recursive function?
+ - A recursive function is a function that calls itself.
+ - Instead of using loops to repeat, the function calls itself with a smaller or simpler input
+ - It must have a base case to stop, otherwise it will run forever → crash or stack overflow
+
+
+Anatomy of a recursive function
+ 1- Base case → stops recursion
+ 2- Recursive case → function calls itself

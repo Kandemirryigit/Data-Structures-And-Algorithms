@@ -1,0 +1,23 @@
+What is a Circular Linked List?
+ - A circular linked list is a linked list where the last node points back to the first node instead of pointing to NULL.
+ - Can be singly circular (each node has only next)
+ - Can be doubly circular (each node has next and prev)
+
+
+
+Why use Circular Linked List?
+
+ 1- Efficient traversal in a loop
+   - Perfect for things like round-robin scheduling (CPU tasks, games, buffers)
+   - You can go around the list endlessly without restarting
+
+ 2- Easier to manage “end” nodes
+   - No need to check for NULL
+   - The last node connects back to head → you always have a “next”
+
+ 3- Useful for queues and buffers
+   - Implementing circular queue → memory-efficient
+   - Eliminates “wasted” space compared to array-based circular queues
+
+ 4- Two-way traversal (if doubly circular)
+   - Can traverse forward and backward endlessly

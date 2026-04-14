@@ -1,0 +1,125 @@
+Arrays & Dynamic Memory Allocation
+
+What is an Array?
+ - An array is the simplest and most fundamental data structure
+ - It stores a collection of elements of the same type, one after another in memory, like seats in a row at a cinema.
+ - int arr[5] = {10, 20, 30, 40, 50};
+ - Think of it like a street with numbered houses
+ - Each house has an address (index) and a family living inside (value). 
+ - You can go directly to any house if you know its number.
+
+
+How Arrays Sit in Memory
+ - This is the most important thing to understand about arrays:
+ - int arr[5] = {10, 20, 30, 40, 50}
+ - In our hardware each int is 4 bytes
+ - index0 ---> 10 ---> Address 1000
+ - index1 ---> 20 ---> Address 1004
+ - index2 ---> 30 ---> Address 1008
+ - index3 ---> 40 ---> Address 1012
+ - index4 ---> 50 ---> Address 1016
+ - address of arr[i] = base address + (i × 4)
+ - The elements sit right next to each other in memory. 
+ - This is called contiguous memory.
+ - This is what makes arrays special.
+
+
+
+
+
+Why Contiguous Memory Makes Access O(1)
+ - Because of contiguous memory, the computer can calculate the address of any element instantly with a simple formula:
+ - address of arr[i] = base_address + (i × size_of_type)
+ - address of arr[3] = 1000 + (3 × 4) = 1012
+ - No searching. No walking through elements. Just math. That's why array access is always O(1).
+
+
+
+
+
+Why Insert/Delete in the Middle is O(n)
+ - Imagine the array is [10, 20, 30, 40, 50] and you want to insert 25 at index 2.
+ - You can't just place it there — something is already there
+ - You have to shift everything right first:
+ - Before:  [10, 20, 30, 40, 50]
+ - Shift:   [10, 20, __, 30, 40, 50]
+ - Insert:  [10, 20, 25, 30, 40, 50]
+ - The more elements there are after the insertion point, the more shifting needed. That's why it's O(n).
+
+
+
+
+
+Static vs Dynamic Arrays
+ - This is where memory allocation comes in.
+ - Static array — size is fixed when you write the code. You decide the size before the program runs.
+ - int arr[10];  // always exactly 10 spots, no more, no less
+ - The problem: what if you need 11? You're stuck. What if you only use 3? You waste 7 spots.
+ - Dynamic array — size is decided while the program is running. You ask the OS for memory when you need it.
+ - int n = 100;  // n could come from user input
+ - int *arr = (int*) malloc(n * sizeof(int));  // ask for n spots at runtime
+
+
+
+
+
+The Four Memory Functions in C
+ - malloc — allocates memory. Does NOT initialize it. Contains garbage values.
+ - int *arr = (int*) malloc(5 * sizeof(int)); // gives you space for 5 ints, values are random garbage
+
+ - calloc — allocates memory AND sets everything to zero.
+ - int *arr = (int*) calloc(5, sizeof(int)); // gives you space for 5 ints, all set to 0
+
+ - realloc — resizes an existing allocation. May move it to a new location.
+ - arr = (int*) realloc(arr, 10 * sizeof(int)); // now arr has space for 10 ints instead of 5
+ 
+ - free — releases the memory back to the system.
+ - free(arr); // ALWAYS do this when you're done. Forgetting = memory leak.
+
+
+
+
+
+
+What is a Memory Leak?
+ - If you allocate memory with malloc and never call free, that memory is locked for the entire lifetime of your program
+ - The program slowly eats up RAM
+ - This is called a memory leak
+ - In big programs it causes crashes.
+        // WRONG — memory leak!
+        int *arr = malloc(100 * sizeof(int));
+        // ... use arr ...
+        // forgot to free!
+
+        // CORRECT
+        int *arr = malloc(100 * sizeof(int));
+        // ... use arr ...
+        free(arr);  // always free at the end
+
+
+
+
+
+
+
+2D Arrays
+ - A 2D array is like a table — rows and columns. Think of a spreadsheet or a chess board.
+ int matrix[3][4];   // 3 rows, 4 columns
+ matrix[1][2] = 99;  // row 1, column 2
+ - In memory it's still one flat block — stored row by row. Row 0 first, then row 1, then row 2
+
+
+
+
+
+
+
+Summary
+ - Arrays store elements side by side in memory (contiguous)
+ - Access is O(1) because of direct address calculation
+ - Insert/delete in the middle is O(n) because of shifting
+ - Static arrays have fixed size. Dynamic arrays use malloc at runtime
+ - malloc = allocate. calloc = allocate + zero. realloc = resize. free = release
+ - Always free what you malloc — otherwise memory leak!
+
+

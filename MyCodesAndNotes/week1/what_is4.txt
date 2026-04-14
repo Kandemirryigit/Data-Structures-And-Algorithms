@@ -1,0 +1,68 @@
+Recursive Programming
+
+First, What is Recursion?
+- Recursion is when a function calls itself to solve a smaller version of the same problem.
+
+Real Life Example — Russian Dolls
+ - You know those Russian dolls (Matryoshka) where you open one and there's a smaller one inside, and inside that another one, and so on until you reach the tiniest doll that can't be opened?
+ - That's recursion.
+ - Each doll is the same thing but smaller
+ - And there's always a smallest doll where it stops.
+ - In recursion:
+ - Each function call = one doll
+ - The smallest doll = the base case (where it stops)
+ - Opening each doll = the recursive case (calling itself)
+
+
+
+
+The Two Parts Every Recursive Function MUST Have
+ - Part 1 — Base case: 
+   - the condition where the function stops calling itself
+   - Without this, the function calls itself forever and the program crashes.
+ - Part 2 — Recursive case: 
+   - where the function calls itself with a smaller input, getting closer to the base case each time.
+
+   int factorial(int n) {
+    if (n == 0) return 1;         // BASE CASE — stop here
+    return n * factorial(n - 1);  // RECURSIVE CASE — call itself smaller
+    }
+
+
+
+
+
+The Call Stack
+ - Every time a function calls itself, it gets added to the call stack in memory. 
+ - Each call waits for the one below it to finish.
+ - This is why recursion uses memory.
+ - Every call sits on the stack until it gets its answer back.
+
+
+
+
+What is Stack Overflow?
+ - If you forget the base case, or the base case is never reached, the function calls itself forever.
+ - The call stack fills up completely and the program crashes
+ - This is called a stack overflow.
+
+ // DANGEROUS — no base case!
+int factorial(int n) {
+    return n * factorial(n - 1);  // never stops!
+}
+
+
+
+
+
+
+Summary
+ - Recursion = a function that calls itself
+ - Every recursive function needs a base case (stop condition) and a recursive case (smaller call)
+ - Without a base case → stack overflow → program crashes
+ - Each call sits on the call stack in memory waiting for its answer
+ - Goes down to the base case first, then comes back up with answers
+ - Recursion is elegant but iteration is usually faster
+ - Classic examples: factorial, fibonacci, sum of array
+
+

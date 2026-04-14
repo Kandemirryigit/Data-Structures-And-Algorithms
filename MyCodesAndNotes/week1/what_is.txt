@@ -1,0 +1,74 @@
+What is an Algorithm?
+ - An algorithm is a step-by-step set of instructions to solve a problem
+ - Think of it like a recipe — you have ingredients (input), follow steps, and get a dish (output).
+ A good algorithm must be:
+  - Correct — gives the right answer
+  - Finite — eventually stops
+  - Unambiguous — each step is clear
+  - Efficient — doesn't waste time or memory
+
+
+
+
+What is a Data Structure?
+ - A data structure is a way of organizing and storing data so it can be accessed and modified efficiently. 
+  - A data structure organizes data so algorithms can work on it efficiently
+ - Different problems need different structures.
+ - Think of it like this: you wouldn't store 1000 contacts in a notepad as a single paragraph — you'd use a table
+ - That's a data structure decision.
+ - Different data structures exist because different problems have different needs
+
+
+
+
+Why Do We Need Both?
+ - Data structures and algorithms work together.
+ - A great algorithm on the wrong data structure is still slow.
+ - For example:
+  - Searching for a name in an unsorted list → slow (check every element)
+  - Searching in a hash table → extremely fast (direct lookup)
+
+ 
+
+
+
+Abstract Data Type (ADT)
+ - An ADT defines what a data structure does, not how it does it.
+ - ADT = the what (interface). Implementation = the how (array, linked list, etc.)
+ - It's the interface, not the implementation.
+ - For example, a Stack ADT says:
+  - push(x) — add an element
+  - pop() — remove the top element
+  - peek() — look at the top
+ - How it's built internally (array or linked list) is the implementation detail.
+
+
+
+
+Memory: Stack vs Heap
+ - When your program runs, memory is divided into two regions:
+ - Stack memory — for function calls and local variables. Fast but limited in size. Automatically managed (freed when function ends).
+ - Heap memory — for dynamically allocated data. Larger, but you manage it manually (in C: malloc/free). This is where most data structures live.
+
+
+
+
+Overview of Data Structure Types
+
+ - Linear
+   - Array
+   - Linked list
+   - Stack/Queue
+ 
+ - Non-Linear
+   - Trees
+   - Graphs
+
+- Hash-Based
+  - Hash table
+
+
+ - Linear structures store data in a sequence — arrays, linked lists, stacks, queues. You go through them one element at a time.
+ - Non-linear structures store data with relationships — trees and graphs. One element can connect to many others.
+ - Hash-based structures use a special function to map data to locations for very fast lookup.
+

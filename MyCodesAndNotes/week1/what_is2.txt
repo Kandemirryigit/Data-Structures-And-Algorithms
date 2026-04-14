@@ -1,0 +1,219 @@
+Algorithm Complexity & Big O Notation
+ 
+Why Do We Need This?
+ - Imagine you write two different programs that both find a name in a list of 1 million names.
+ - Both give the correct answer.
+ - But one takes 2 seconds, the other takes 3 hours.
+ - Which one is better?
+ - This is why we measure algorithm efficiency.
+ - But we don't measure in seconds — because seconds depend on your computer's hardware.
+ - Instead we measure in how many operations the algorithm does as input grows.
+ - That measurement is called Big O Notation.
+
+
+
+
+- What is Big O?
+ - Big O describes how the number of operations grows as the input size (n) grows.
+ - We always ask: if I double the input size, what happens to the work?
+ - It gives us a way to compare algorithms independently of hardware.
+ - Big O measures growth rate of operations as input grows, not actual seconds
+
+
+
+
+O(1) — Constant Time
+ - No matter how large the input is, the algorithm always does the same amount of work.
+ - int x = arr[5];   // direct access, always 1 step
+ - It doesn't matter if the array has 10 elements or 10 million. Accessing index 5 is always instant. That's O(1).
+
+
+
+O(log n) — Logarithmic Time
+ - Every step cuts the problem in half. Input doubles → work only increases by 1 step.
+ - The best example is binary search — you search a sorted array by always cutting it in half:
+    // Is 40 in this array? 
+    [10, 20, 30, 40, 50, 60, 70] ↑ middle = 40? Yes! Found in 1 step.
+    // If not found, eliminate half and repeat
+- For 1 million elements, binary search takes only about 20 steps. That's the power of log n.
+
+
+
+
+O(n) — Linear Time
+ - Work grows directly with input size. Double the input → double the work.
+  - // Find a value — must check every element
+    for (int i = 0; i < n; i++) {
+    if (arr[i] == target) return i;
+    }
+- If n = 1000, worst case is 1000 checks. If n = 1 million, worst case is 1 million checks.
+
+
+
+
+O(n log n) — Linearithmic Time
+ - This is the complexity of the best sorting algorithms like merge sort and quicksort. 
+ - Faster than O(n²) but slower than O(n). You'll see this a lot in practice.
+
+
+
+O(n²) — Quadratic Time
+ - A loop inside a loop, where both loops go up to n.
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            // this runs n × n = n² times
+        }
+    }
+- If n = 1000, that's 1 million operations. Gets very slow very fast. Bubble sort is O(n²).
+
+
+
+
+O(2ⁿ) — Exponential Time
+ - Every new element doubles the work. Grows incredibly fast. Usually means your algorithm needs to be rethought.
+    // Naive recursive fibonacci — recalculates the same values over and over
+    int fib(int n) {
+        if (n <= 1) return n;
+        return fib(n-1) + fib(n-2);  // two calls each time → 2ⁿ
+    }
+
+
+
+
+
+
+How to Read Your Code and Find Big O
+ - No Loop ---> O(1)
+ - One Loop ---> O(n)
+ - Loop in Loop ---> O(n^2)
+ - Halving loop ---> O(logn)
+
+
+
+
+
+
+Best, Average, Worst Case
+ - These are three different things.
+ - Big O is usually worst case.
+ - Take linear search as the example — looking for a value in an unsorted array:
+ - Best case O(1): the value is the very first element. Done immediately.
+ - Average case O(n/2) → O(n): the value is somewhere in the middle.
+ - Worst case O(n): the value is the last element, or it's not in the array at all. You checked everything.
+
+
+
+
+
+Space Complexity
+ - Big O doesn't only apply to time — it also applies to memory usage.
+    // O(1) space — only uses a few variables, no matter how big n is
+    int sum = 0;
+    for (int i = 0; i < n; i++) sum += arr[i];
+
+    // O(n) space — creates a whole new array of size n
+    int* copy = malloc(n * sizeof(int));
+- An algorithm that is fast but uses too much memory can still be a bad algorithm.
+
+
+
+
+
+Quick Comparison Table
+
+ - O(1) -- Constant -- Array Index Accessing
+ - O(logn) -- Logarithmic -- Binary Searching
+ - O(n) -- Linear -- Linear Search
+ - O(nlogn)  -- Linearithmic -- Merge sort
+ - O(n²)  -- Quadratic -- Bubble sort
+ - O(2ⁿ)  -- Exponential -- Naive recursion
+
+
+ - From top to bottom — fastest to slowest.
+
+
+
+
+
+
+
+
+
+
+
+Start With a Real Life Story
+ - Imagine you have a pile of 100 books and you're looking for a specific one.
+ - Method 1: You pick up each book one by one from the top until you find it. In the worst case you check all 100 books.
+ - Method 2: The books are sorted alphabetically and you open the pile in the middle, see if your book is before or after, then cut that half again and again. You find it in about 7 steps.
+ - Both methods work. But Method 2 is way faster. Big O is just the tool we use to describe how much faster, and why.
+
+
+
+The Core Question Big O Answers
+ - "If I give this algorithm MORE data, how much MORE work does it have to do?"
+ - That's it. That's all Big O is asking.
+
+
+
+
+O(1) — The Best Case. Work Never Changes.
+ - Imagine a locker room with 1000 lockers.
+ - You want locker number 57.
+ - You walk straight to locker 57 and open it
+ - Done. 
+ - It doesn't matter if there are 10 lockers or 10 million — you go directly there.
+ - That's O(1). No matter how big the input, always 1 step
+ - In code:
+ - int x = arr[57];  // go directly to position 57. Always instant.
+
+
+
+
+
+O(n) — Work Grows With Input
+ - Imagine you lost your keys somewhere in your house.
+ - You have to check every single room, one by one, until you find them
+ - 5 rooms = 5 checks. 50 rooms = 50 checks. 500 rooms = 500 checks.
+ - More rooms = more work. That's O(n). Work grows directly with input size.
+ In code:
+    for (int i = 0; i < n; i++) {
+    if (arr[i] == target) return i;  // check each one by one
+}
+
+
+
+
+
+
+O(n²) — Work Grows Very Fast
+ - Imagine you're at a party with 10 people.
+ - Everyone has to shake hands with everyone else.
+ - 10 people = 45 handshakes. 100 people = 4950 handshakes. Double the people → 4x the handshakes.
+ - That's O(n²). A loop inside a loop.
+ In code:
+    for (int i = 0; i < n; i++) {        // each person
+        for (int j = 0; j < n; j++) {    // shakes hands with each other person
+            // n × n = n² total
+        }
+    }
+
+
+
+
+
+O(log n) — Work Barely Grows At All
+ - Remember the phone book. 
+ - You want to find "Smith".
+ - You don't start from page 1. 
+ - You open the middle — too early, 
+ - go to the right half. Open the middle of that half — too late, 
+ - go left. You keep cutting it in half.
+ - 1000 pages = about 10 steps. 1 million pages = about 20 steps. Doubling the input only adds 1 more step.
+ - That's O(log n). This is what binary search does.
+
+
+
+
+The Two Simple Rules
+ - Rule 1 — We only care about the big picture.If your algorithm does 3n operations, we just say O(n). The 3 doesn't matter when n is huge.
+ - Rule 2 — We always think about the worst case.If you're searching for a name and it might be the last one in the list — that's the worst case. That's what we measure.
